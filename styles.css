@@ -1,0 +1,134 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header Styling */
+header {
+  background-color: #ff7f50;
+  color: white;
+  padding: 20px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+/* Gift Box Styling */
+.gift-box {
+  background-color: #f9c74f;
+  border-radius: 50%;
+  padding: 40px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, transform 0.5s ease;
+  position: relative;
+  animation: openBox 0.5s ease-out;
+}
+
+/* Gift Box Opening Animation */
+@keyframes openBox {
+  0% {
+      transform: scale(0);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.gift-box:hover {
+  transform: scale(1.1);
+}
+
+/* Hidden Content (Photos and Pickup Lines) */
+.gift-content {
+  display: none; /* Initially hidden */
+  margin-top: 30px;
+  opacity: 0;
+  animation: showContent 1s forwards;
+}
+
+/* Animation for showing the content */
+@keyframes showContent {
+  0% {
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Photo Styling */
+.photos img {
+  width: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateX(50px);
+  animation: movePhoto 1s ease-out forwards;
+}
+
+/* Animations for the photos */
+@keyframes movePhoto {
+  0% {
+      transform: translateX(50px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+/* Pickup Lines Styling */
+.pickup-lines p {
+  font-size: 1.2rem;
+  color: #ff7f50;
+  font-weight: bold;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeInText 1s ease-out forwards;
+}
+
+/* Fade-in Effect for Text */
+@keyframes fadeInText {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 768px) {
+  .gift-box {
+      padding: 30px;
+      font-size: 1.2rem;
+  }
+
+  .photos img {
+      width: 80px;
+  }
+}
